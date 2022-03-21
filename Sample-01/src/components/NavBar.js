@@ -18,16 +18,17 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import { useAuth0 } from "@auth0/auth0-react";
+import useAuth from "../auth/useAuth";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
-    user,
+    userInfo: user,
     isAuthenticated,
-    loginWithRedirect,
+    loginByAuth0PopUp,
     logout,
-  } = useAuth0();
+  } = useAuth();
+
   const toggle = () => setIsOpen(!isOpen);
 
   const logoutWithRedirect = () =>
@@ -73,7 +74,7 @@ const NavBar = () => {
                     id="qsLoginBtn"
                     color="primary"
                     className="btn-margin"
-                    onClick={() => loginWithRedirect()}
+                    onClick={() => loginByAuth0PopUp()}
                   >
                     Log in
                   </Button>
@@ -117,7 +118,7 @@ const NavBar = () => {
                     id="qsLoginBtn"
                     color="primary"
                     block
-                    onClick={() => loginWithRedirect({})}
+                    onClick={() => loginByAuth0PopUp({})}
                   >
                     Log in
                   </Button>

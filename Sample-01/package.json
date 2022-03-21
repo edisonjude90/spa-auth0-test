@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "npm-run-all --parallel spa api-server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
-    "spa": "react-scripts start",
+    "start": "react-scripts start",
     "server": "node server.js",
     "server:dev": "nodemon server.js",
     "api-server": "node api-server.js",
@@ -16,7 +15,7 @@
     "prod": "npm-run-all --parallel server api-server"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^1.2.0",
+    "@auth0/auth0-spa-js": "^1.15.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
